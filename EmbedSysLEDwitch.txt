@@ -1,0 +1,10 @@
+#include "mbed.h"
+DigitalIn SW1(A0);
+DigitalOut LED_1(D1);
+int main() {
+ SW1.mode(PullUp);
+ while(1) {
+ LED_1 = !SW1;
+ wait(0.2);
+ }
+}

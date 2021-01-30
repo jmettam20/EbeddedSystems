@@ -1,0 +1,22 @@
+#include"mbed.h"
+I2Ctemp_sensor(D14,D15); 
+Serialpc (USBTX,USBRX); 
+constint temp_addr = 0x90;
+
+char cmd1 [] = {0x51,0xAA};
+char read_temp[2]; 
+int main(){
+while (1){
+
+temp_ sensor.write(temp_addr,&cmd1[0],1);
+wait(0.5);
+
+temp_sensor.write(temp_addr,&cmd1[1],1);
+
+temp_sensor.read(temp_addr,read_temp,2);
+
+float temp = (float((read_temp [0] << 8 ) | read_temp [1]) /256);
+
+pc.printf("Temp = %.2f\r\n",temp);
+}
+}

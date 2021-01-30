@@ -1,0 +1,17 @@
+#include ”mbed.h”
+PwmOut buzzer(D3);
+
+float frequency[]={659,554,659,554,440,494,554,587,494,659,554,440};
+float beat[]={1,1,1,1,1,0.5,0.5,1,1,1,1,2};
+int main(){
+for(int i=0; i<= 11; i ++) {
+
+buzzer.period((float)1.0/(2∗frequency[i]));
+
+buzzer=0.5;
+
+wait((float) 0.4 ∗ beat[i]);
+}
+buzzer=0;
+while(1); 
+}

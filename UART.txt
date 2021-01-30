@@ -1,0 +1,9 @@
+#include "mbed.h"
+Serialpc(USBTX,USBRX); 
+int main (){
+pc.printf("Hello World\n\r");
+wait(2);
+pc.printf("Hello \nWorld\n\r");
+wait(2);
+pc.printf("Hello \rW o rld \n\r");
+}

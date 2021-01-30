@@ -1,0 +1,6 @@
+#include ”mbed.h”
+PwmOut pwm1(D3);
+int main () {
+pwm1 . period (0.01); 
+pwm1 = 0.5; 
+}

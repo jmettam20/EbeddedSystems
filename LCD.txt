@@ -1,0 +1,12 @@
+#i n c l u d e "mbed . h"
+#i n c l u d e "TextLCD . h"
+SPI s p i _ l c d ( D11 , NC, D13 ) ; // SPI c omm u nica ti o n : MOSI , MISO, SCLK
+TextLCD_SPI l c d (& s p i_ l c d , D10 ) ; // LCD o b j e c t : SPI bus , SS p i n
+i n t main ( ) {
+l c d . p r i n t f ( " H e l l o World " ) ;
+w a i t ( 2 ) ;
+l c d . c l s ( ) ; // c l e a r s c r e e n
+l c d . p r i n t f ( " H e l l o " ) ;
+l c d . l o c a t e ( 0 , 1 ) ; // move c u r s o r t o column 0 row 1
+l c d . p r i n t f ( " World " ) ;
+}
